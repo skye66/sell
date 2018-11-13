@@ -1,8 +1,10 @@
 package com.imooc.vo;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 @Data
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResultVo<T> {
     /*响应状态码*/
     private Integer code;

@@ -18,7 +18,7 @@ public interface OrderService {
     Page<OrderDTO> findList(String buyerOpenid, Pageable pageable);
 
     /*取消订单*/
-    OrderDTO cancle(OrderDTO orderDTO);
+    OrderDTO cancel(OrderDTO orderDTO);
 
     /*完成订单*/
     OrderDTO finished(OrderDTO orderDTO);

@@ -26,6 +26,12 @@
 
     <dependencies>
 
+        <!--gson依赖-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+
         <!--jpa依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
