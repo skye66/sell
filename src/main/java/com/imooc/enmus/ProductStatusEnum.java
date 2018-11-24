@@ -1,11 +1,11 @@
 package com.imooc.enmus;
 
-public enum ProductStatusEnum {
+public enum ProductStatusEnum implements CodeEnum {
     UP(0,"在架"),
     DOWN(1,"下架")
     ;
 
-    private int code;
+    private Integer code;
     private String message;
 
     ProductStatusEnum(int code, String message) {
@@ -13,7 +13,7 @@ public enum ProductStatusEnum {
         this.message = message;
     }
 
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 

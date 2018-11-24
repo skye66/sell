@@ -1,12 +1,34 @@
 spring:
-  datasource:
-    url: jdbc:mysql://10.34.37.190:3306/sell?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
-    username: root
-    password: 123456
   jpa:
     show-sql: true
   jackson:
     default-property-inclusion: non_null
+  profiles:
+    active: localdata
+#  mvc:
+#    throw-exception-if-no-handler-found: true
+#  resources:
+#    add-mappings: false
 server:
   servlet:
     context-path: /sell
+wechat:
+  openAppId: 2222
+  openAppSecret: 2222
+  mpAppId: wxd4908aee113984e3
+  mpAppSecret: b979deb8601622925aeb4b0640e916dc
+  mchId: wxd4908aee113984e3
+  mchKey: wxd4908aee113984e3
+  keyPath: /dir/p2
+  notifyUrl: http://9502250a.ngrok.io/sell/pay/notify
+  templateId:
+    orderStatus: tSQpJ5ieVd5cpCqv_LosO8G5i8jNHzi_cqdS367vIB8
+project:
+  wechatMpAuthorize: http://f6264bd7.ngrok.io:8080
+  wechatOpenAuthorize: http://f6264bd7.ngrok.io:8080
+  projectUrl: http://f6264bd7.ngrok.io:8080
+logging:
+  level:
+    com.imooc.dataobject.mapper : trace
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

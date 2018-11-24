@@ -4,7 +4,7 @@
     <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>
-                %d - %msg%n
+                [%d{HH:mm:ss.SSS}][%p][%c{40}][%t] %m%n
             </pattern>
         </layout>
     </appender>

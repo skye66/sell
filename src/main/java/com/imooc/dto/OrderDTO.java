@@ -1,9 +1,13 @@
 package com.imooc.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.imooc.dataobject.OrderDetail;
+import com.imooc.enmus.OrderStatusEnum;
+import com.imooc.enmus.PayStatusEnum;
 import com.imooc.serializer.Date2LongSerializer;
+import com.imooc.utils.EnumUtil;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -41,5 +45,15 @@ public class OrderDTO {
 
     /*orderDetail列表*/
     List<OrderDetail> orderDetailList;
+
+    @JsonIgnore
+    public OrderStatusEnum getOrderStatusEnum(){
+        return EnumUtil.getByCode(this.orderStatus, OrderStatusEnum.class);
+    }
+
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum(){
+        return EnumUtil.getByCode(this.payStatus, PayStatusEnum.class);
+    }
 
 }

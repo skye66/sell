@@ -10,6 +10,7 @@ import com.imooc.vo.ProductVo;
 import com.imooc.vo.ResultVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,12 +23,15 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/buyer/product")
 public class BuyerProductController {
+
     @Autowired
     private ProductService productService;
     @Autowired
     private CategoryService categoryService;
 
     @GetMapping("/list")
+//    @Cacheable(cacheNames = "product", key = "#orderId", condition = "#orderId.length() > 2", unless = "#result.code != 0")
+    //String orderId方法的参数
     public ResultVo list(){
         //1.查询所有的上架商品
         List<ProductInfo> productInfoList = productService.findUpAll();
@@ -36,8 +40,8 @@ public class BuyerProductController {
 //        List<Integer> categoryTypeList = new ArrayList<>();
         //传统的方法
 //        for (ProductInfo productInfo : productInfoList){
-//            categoryTypeList.add(productInfo.getCategoryType());
-//        }
+////            categoryTypeList.add(productInfo.getCategoryType());
+////        }
         //lambda
         List<Integer> categoryTypeList = productInfoList.stream().map(e -> e.getCategoryType()).collect(Collectors.toList());
 

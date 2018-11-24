@@ -26,6 +26,63 @@
 
     <dependencies>
 
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-cache</artifactId>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/com.warmmen/redislock-spring-boot-starter &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>com.warmmen</groupId>-->
+            <!--<artifactId>redislock-spring-boot-starter</artifactId>-->
+            <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
+
+
+        <!--mybatis依赖-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+            <version>1.5.3.RELEASE</version>
+        </dependency>
+
+        <!--freemarker模版引擎-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <!--redis缓存-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <!--github上优秀的支付插件-->
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-mp</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <!--点餐系统的优秀sdk插件-->
+        <dependency>
+            <groupId>cn.springboot</groupId>
+            <artifactId>best-pay-sdk</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <!--gson依赖-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -61,6 +118,7 @@
     </dependencies>
 
     <build>
+        <finalName>sell</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
