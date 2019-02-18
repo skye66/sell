@@ -33,7 +33,7 @@ public class BuyerOrderController {
     private BuyerService buyerService;
     //创建订单
     @PostMapping("create")
-    public ResultVo<Map<String, String>> create(@Valid OrderForm orderForm, BindingResult bindingResult){
+    public ResultVo<Map<String, String>> create( @Valid  OrderForm orderForm, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             throw new SellException(ResultEnum.PARAM_ERROR.getCode(), bindingResult.getFieldError().getDefaultMessage());
         }
